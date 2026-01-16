@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.PlayerLoop;
 using UnityEngine.XR.WSA.Input;
 
 public class PlayerStats : MonoBehaviour
@@ -28,6 +29,11 @@ public class PlayerStats : MonoBehaviour
         public int expCapIncrease;
     }
 
+    [Header("I-Frames")]
+    public float invincibilityDuration;
+    float invincibilityTimer;
+    bool isInvincible;
+
     public List<LevelRange> levelRanges;
 
     void Awake()
@@ -44,6 +50,17 @@ public class PlayerStats : MonoBehaviour
     {
         expCap = levelRanges[0].expCapIncrease;
 
+    }
+    void Update()
+    {
+        if (invincibilityTimer > 0)
+        {
+            invincibilityTimer -= Time.deltaTime;
+        }
+        else if (isInvincible) 
+        {
+            isInvincible = false;
+        }
     }
 
     public void IncreaseExp(int amount) 
@@ -72,10 +89,28 @@ public class PlayerStats : MonoBehaviour
         }
     }
 
-
-
-    void Update()
+    public void TakeDamage(float dmg)
     {
-        
+        if (!isInvincible) 
+        {
+            currentHealth -= dmg;
+
+            invincibilityTimer = invincibilityDuration;
+            isInvincible = true;
+
+            if (currentHealth < 0)
+            {
+                Kill();
+            }
+        }
+
     }
+
+    public void Kill()
+    {
+        Debug.Log("DED");
+    }
+
+
+
 }
