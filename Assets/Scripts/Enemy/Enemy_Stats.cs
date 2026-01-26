@@ -7,9 +7,12 @@ public class Enemy_Stats : MonoBehaviour
     public EnemyScriptableObject enemyData;
 
     // current stats
-    float currentMoveSpeed;
-    float currentHealth;
-    float currentDamage;
+    [HideInInspector]
+    public float currentMoveSpeed;
+    [HideInInspector]
+    public float currentHealth;
+    [HideInInspector]
+    public float currentDamage;
 
     void Awake()
     {
@@ -40,5 +43,15 @@ public class Enemy_Stats : MonoBehaviour
             PlayerStats player = col.gameObject.GetComponent<PlayerStats>();
             player.TakeDamage(currentDamage);
         }
+    }
+    private void OnDestroy() 
+    {
+        if (!gameObject.scene.isLoaded)
+        {
+            return;
+        }
+
+        EnemySpawner es = FindObjectOfType<EnemySpawner>();
+        es.OnEnemyKilled();
     }
 }

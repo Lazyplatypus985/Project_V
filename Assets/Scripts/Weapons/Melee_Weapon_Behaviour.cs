@@ -20,7 +20,10 @@ public class Melee_Weapon_Behaviour : MonoBehaviour
         currentCooldown = weaponData.CooldownDuration;
         current_pierce = weaponData.Pierce;
     }
-
+    public float GetCurrentDamage()
+    {
+        return currentDamage *= FindObjectOfType<PlayerStats>().currentMight;
+    }
     protected virtual void Start()
     {
         Destroy(gameObject, destroyAftherSeconds);
@@ -31,7 +34,7 @@ public class Melee_Weapon_Behaviour : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             Enemy_Stats enemy = collision.GetComponent<Enemy_Stats>();
-            enemy.TakeDamage(currentDamage);
+            enemy.TakeDamage(GetCurrentDamage());
         }
     }
 }

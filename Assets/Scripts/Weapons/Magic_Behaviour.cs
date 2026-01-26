@@ -17,6 +17,6 @@ public class Magic_Behaviour : Projectile_Weapon_Behaviour
             Debug.LogError("weaponData is NULL on " + gameObject.name);
             return;
         }
-        transform.position += direction * weaponData.Speed * Time.deltaTime;
+        transform.position += direction * currentSpeed * Time.deltaTime;
     }
 }

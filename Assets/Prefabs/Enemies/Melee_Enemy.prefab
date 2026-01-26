@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: -7764955321070662653}
   - component: {fileID: -5671473895032795837}
   - component: {fileID: 4345029175222296429}
+  - component: {fileID: 8203134679395778835}
   m_Layer: 0
   m_Name: Melee_Enemy
   m_TagString: Enemy
@@ -74,7 +75,8 @@ SpriteRenderer:
   m_SortingLayerID: -343612467
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300018, guid: a07735877a3bd644094331b137b71878, type: 3}
+  m_Sprite: {fileID: 2373175670222840925, guid: 5437ec4a47bace34a8526b332e8db8d8,
+    type: 3}
   m_Color: {r: 1, g: 0.12174675, b: 0.033018887, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -95,14 +97,14 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.84375, y: 0.6875}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -123,7 +125,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b28613dd3256d49856a3dc06325ac4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemyData: {fileID: 11400000, guid: 070b2acd8a2a5ed41adb48e4e9bcec1e, type: 2}
 --- !u!114 &-5671473895032795837
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -137,6 +138,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyData: {fileID: 11400000, guid: 070b2acd8a2a5ed41adb48e4e9bcec1e, type: 2}
+  currentMoveSpeed: 0
+  currentHealth: 0
+  currentDamage: 0
 --- !u!114 &4345029175222296429
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -153,4 +157,30 @@ MonoBehaviour:
   - name: blueExp
     itemPrefab: {fileID: 2750423395788323524, guid: 8eb6cdcc7df5df846b39de33fc369212,
       type: 3}
-    droprate: 100
+    dropRate: 99
+--- !u!61 &8203134679395778835
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1340864036088713888}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 0.84375, y: 0.6875}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.25, y: 0.25}
+  m_EdgeRadius: 0

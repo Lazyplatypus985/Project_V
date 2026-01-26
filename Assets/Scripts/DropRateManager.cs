@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 
 public class DropRateManager : MonoBehaviour
@@ -9,28 +8,40 @@ public class DropRateManager : MonoBehaviour
     {
         public string name;
         public GameObject itemPrefab;
-        public float droprate;
+        [Range(0f, 100f)]
+        public float dropRate;
     }
 
-    public List<Drops> drops ;
+    public List<Drops> drops;
 
-    void OnDestroy()
+     void OnDestroy()
     {
-        float randomNumber = UnityEngine.Random.Range(0f, 100f);
-        List<Drops> possibleDrops = new List<Drops>() ;
-
-
-        foreach (Drops rate in drops)
+        if (!gameObject.scene.isLoaded)
         {
-            if (randomNumber <= rate.droprate)
-            {
-                possibleDrops.Add(rate);
+            return;
+        }
 
+        float randomNumber = Random.Range(0f, 100f);
+        List<Drops> possibleDrops = new List<Drops>();
+
+        foreach (Drops drop in drops)
+        {
+            if (randomNumber <= drop.dropRate)
+            {
+                possibleDrops.Add(drop);
             }
-            if (possibleDrops.Count > 0) {
-                Drops drops = possibleDrops[UnityEngine.Random.Range(0, possibleDrops.Count)];
-                Instantiate(rate.itemPrefab, transform.position, Quaternion.identity);
-            }
+        }
+
+        if (possibleDrops.Count > 0)
+        {
+            Drops selectedDrop =
+                possibleDrops[Random.Range(0, possibleDrops.Count)];
+
+            Instantiate(
+                selectedDrop.itemPrefab,
+                transform.position,
+                Quaternion.identity
+            );
         }
     }
 }

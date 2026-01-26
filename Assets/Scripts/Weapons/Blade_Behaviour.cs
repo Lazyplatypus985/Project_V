@@ -22,7 +22,7 @@ public class Blade_Behaviour : Melee_Weapon_Behaviour
         if (collision.CompareTag("Enemy") && !markedEnemies.Contains(collision.gameObject))
         {
             Enemy_Stats enemy = collision.GetComponent<Enemy_Stats>();
-            enemy.TakeDamage(currentDamage);
+            enemy.TakeDamage(GetCurrentDamage());
 
             markedEnemies.Add(collision.gameObject);
         }
