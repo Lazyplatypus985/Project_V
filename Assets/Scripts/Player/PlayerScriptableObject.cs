@@ -32,4 +32,12 @@ public class PlayerScriptableObject : ScriptableObject
     float magnet;
     public float Magnet { get => magnet; private set => magnet = value; }
 
+    [SerializeField]
+    Sprite icon;
+    public Sprite Icon { get => icon; private set => icon = value; }
+
+    [SerializeField]
+    new string name;
+    public string Name { get => name; private set => name = value; }
+
 }

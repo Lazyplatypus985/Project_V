@@ -10,10 +10,16 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c7d7be5345d261048ab273b80d7e2251, type: 3}
-  m_Name: Blade
+  m_Name: Blade_lvl_1
   m_EditorClassIdentifier: 
   prefab: {fileID: 7592007428222763541, guid: ce0c871918c27c5418fe56e48d560d0b, type: 3}
   damage: 2
   speed: 2
   cooldownDuration: 3
   pierce: 2
+  level: 1
+  nextLevelPrefab: {fileID: 1803243641903068147, guid: d4807f89288e1f14daffcdde2ac8b860,
+    type: 3}
+  icon: {fileID: -6559371585598662537, guid: f3156dab838d2644fbeeef50482bb78c, type: 3}
+  name: Balade
+  description: Baldes spins around you doing damage

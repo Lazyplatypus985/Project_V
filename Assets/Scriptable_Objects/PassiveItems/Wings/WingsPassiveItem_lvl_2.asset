@@ -10,6 +10,11 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3f02c4b0d30f0843baf95b0418070ff, type: 3}
-  m_Name: WingsPassiveItem
+  m_Name: WingsPassiveItem_lvl_2
   m_EditorClassIdentifier: 
-  multiplier: 50
+  multiplier: 100
+  level: 2
+  nextLevelPrefab: {fileID: 0}
+  icon: {fileID: 623645456703944049, guid: 8559b51eef7f6574fba2c55d3be5cb55, type: 3}
+  name: Spiral lvl 2
+  description: More speed

@@ -20,3 +20,5 @@ MonoBehaviour:
   might: 1
   projectileSpeed: 1
   magnet: 1.6
+  icon: {fileID: 3713219614965599903, guid: 87044a6bed6e62a4fadf64d77d361a23, type: 3}
+  name: Fireball

@@ -10,6 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d3f02c4b0d30f0843baf95b0418070ff, type: 3}
-  m_Name: SpinachPassiveItem
+  m_Name: WingsPassiveItem_lvl_1
   m_EditorClassIdentifier: 
-  multiplier: 100
+  multiplier: 50
+  level: 1
+  nextLevelPrefab: {fileID: 5856221012506855023, guid: 0f2248cb3b973ab408c9660595ec315c,
+    type: 3}
+  icon: {fileID: -1009136379208496780, guid: e3081e05523802045b0b8275edaf5986, type: 3}
+  name: 'Spiral '
+  description: Makes you faster
