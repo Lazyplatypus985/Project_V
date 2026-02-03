@@ -4,6 +4,7 @@ using System.Xml.Serialization;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
 using UnityEngine.XR.WSA.Input;
+using UnityEngine.UI;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -16,6 +17,8 @@ public class PlayerStats : MonoBehaviour
     float currentMight;
     float currentProjectileSpeed;
     float currentMagnet;
+
+
 
     #region currentstats
 
@@ -141,6 +144,11 @@ public class PlayerStats : MonoBehaviour
     public int weaponIndex;
     public int passiveItemIndex;
 
+    [Header("UI")]
+    public Image healthBar;
+    public Image expBar;
+    public Text levelText;
+
     public GameObject second_Weapontest;
     public GameObject itemtest1;
     public GameObject itemtest2;
@@ -179,6 +187,9 @@ public class PlayerStats : MonoBehaviour
         GameManager.instance.currentMagnetDisplay.text = "Magnet: " + currentMagnet;
 
         GameManager.instance.AssignChosenCharacterUI(playerData);
+        UpdateHPBar();
+        UpdateExpBar();
+        UpdateExpText();
     }
     void Update()
     {
@@ -197,6 +208,7 @@ public class PlayerStats : MonoBehaviour
     {
         exp += amount;
         LevelUpChecker();
+        UpdateExpBar();
     }
 
     void LevelUpChecker()
@@ -217,9 +229,23 @@ public class PlayerStats : MonoBehaviour
             }
             expCap += expCapIncrease;
 
+            UpdateExpText();
+            
+
             GameManager.instance.StartLevelUp();
         }
     }
+
+    void UpdateExpBar()
+    {
+        expBar.fillAmount = (float) exp / expCap;
+    }
+
+    void UpdateExpText()
+    {
+        levelText.text = "LVL " + level.ToString();
+    }
+
 
     public void TakeDamage(float dmg)
     {
@@ -234,8 +260,13 @@ public class PlayerStats : MonoBehaviour
             {
                 Kill();
             }
+            UpdateHPBar();
         }
 
+    }
+    void UpdateHPBar()
+    {
+        healthBar.fillAmount = currentHealth / playerData.MaxHealth;
     }
 
     public void Kill()

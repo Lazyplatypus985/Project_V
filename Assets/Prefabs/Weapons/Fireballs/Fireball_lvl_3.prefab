@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4566524103738228261}
   - component: {fileID: 4169421281415220468}
   m_Layer: 0
-  m_Name: Fireball_lvl_2
+  m_Name: Fireball_lvl_3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: -343612467
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 1808684217656590900, guid: 8559b51eef7f6574fba2c55d3be5cb55,
-    type: 3}
+  m_Sprite: {fileID: 801156608480740780, guid: 82e9a1eaaedcee84ebc449b04ffa27d0, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -97,7 +96,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37bedc4d65b6a5b4187245d07c7aae78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  weaponData: {fileID: 11400000, guid: 1098b6e4d1009334d970d7f18f109283, type: 2}
+  weaponData: {fileID: 11400000, guid: 2fe602854e5010645929166a5bd4c195, type: 2}
   destroyAfterSeconds: 3
 --- !u!60 &4566524103738228261
 PolygonCollider2D:

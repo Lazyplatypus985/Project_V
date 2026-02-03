@@ -178,7 +178,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("chosen item or weapon leght did not mach the data");
             return;
         }
-
         for (int i = 0; i < chosenWeaponsUI.Count; i++)
         {
             if (chosenWeaponsData[i].sprite)
