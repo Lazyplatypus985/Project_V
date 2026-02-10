@@ -16,7 +16,6 @@ public class CharacterSelector : MonoBehaviour
         }
         else 
         {
-            Debug.LogWarning("EXTRA " + this + " DELETED");
             Destroy(gameObject);
         }
     }

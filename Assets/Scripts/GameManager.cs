@@ -50,6 +50,8 @@ public class GameManager : MonoBehaviour
 
     public GameObject playerObject;
 
+    public Player_Collector Player_Collector;
+
     void Awake () 
     {
         if (instance == null)
@@ -61,6 +63,13 @@ public class GameManager : MonoBehaviour
             Debug.Log("Extra " + this + " Deleted");
         }
         DisableScreen();
+
+
+    }
+
+    void Start()
+    {
+        Savemanager.Load();
     }
     void Update()
     {
@@ -79,8 +88,8 @@ public class GameManager : MonoBehaviour
                 if (!isGameOver)
                 {
                     Time.timeScale = 0f;
+                    Player_Collector.SaveCoinsToStash(Player_Collector.GetCoins());
                     isGameOver = true;
-                    Debug.Log("Game Over");
                     DisplayResults();
                 }
                 break;
@@ -89,7 +98,6 @@ public class GameManager : MonoBehaviour
                 {
                     choosingLevelUp = true;
                     Time.timeScale = 0f;
-                    Debug.Log("Uprageds show");
                     LevelUpScreen.SetActive(true);
                 }
                 break ;
@@ -112,7 +120,6 @@ public class GameManager : MonoBehaviour
             ChangeState(GameState.Pause);
             Time.timeScale = 0f;
             pauseScreen.SetActive(true);
-            Debug.Log("Game is Paused");
         }
 
     }
@@ -124,7 +131,6 @@ public class GameManager : MonoBehaviour
             ChangeState(previousState);
             Time.timeScale = 1f;
             pauseScreen?.SetActive(false);
-            Debug.Log("Unpaused");
         }
 
     }

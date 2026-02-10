@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="CharacterScriptableObject", menuName = "ScriptableObjects/Character")]
 public class PlayerScriptableObject : ScriptableObject
 {
+
     [SerializeField]
     GameObject startingWeapon;
     public GameObject StartingWeapon { get => startingWeapon; private set => startingWeapon = value; }
@@ -39,5 +40,7 @@ public class PlayerScriptableObject : ScriptableObject
     [SerializeField]
     new string name;
     public string Name { get => name; private set => name = value; }
+
+
 
 }

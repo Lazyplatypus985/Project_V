@@ -155,7 +155,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   drops:
   - name: blueExp
-    itemPrefab: {fileID: 2750423395788323524, guid: 8eb6cdcc7df5df846b39de33fc369212,
+    itemPrefab: {fileID: 2750423395788323524, guid: e0b77a2978648c14980458a575bfb438,
       type: 3}
     dropRate: 99
 --- !u!61 &8203134679395778835

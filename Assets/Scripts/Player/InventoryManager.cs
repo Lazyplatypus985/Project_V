@@ -82,7 +82,6 @@ public class InventoryManager : MonoBehaviour
             Weapon_Controller weapon = weaponSlots[slotIndex];
             if (!weapon.weaponData.NextLevelPrefab) 
             {
-                Debug.LogError("no next level for " + weapon.name);
                 return;
             }
             GameObject upgradedWeapon = Instantiate(weapon.weaponData.NextLevelPrefab, transform.position, Quaternion.identity);
@@ -107,8 +106,7 @@ public class InventoryManager : MonoBehaviour
             Passive_Item passiveItem = itemSlots[slotIndex];
             if (!passiveItem.PassiveItemData.NextLevelPrefab)
             {
-                
-                Debug.LogError("no next level for " + passiveItem.name);
+                return;
             }
             GameObject upgradedPassiveItem = Instantiate(passiveItem.PassiveItemData.NextLevelPrefab, transform.position, Quaternion.identity);
             upgradedPassiveItem.transform.SetParent(transform);

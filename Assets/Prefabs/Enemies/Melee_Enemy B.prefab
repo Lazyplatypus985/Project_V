@@ -154,7 +154,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   drops:
-  - name: blueExp
+  - name: Gold
     itemPrefab: {fileID: 2750423395788323524, guid: 8eb6cdcc7df5df846b39de33fc369212,
       type: 3}
     dropRate: 99
